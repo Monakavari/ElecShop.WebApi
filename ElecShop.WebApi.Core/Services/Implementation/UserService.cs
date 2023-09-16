@@ -2,7 +2,6 @@
 using ElecShop.WebApi.Core.DTOs.Account;
 using ElecShop.WebApi.Core.Security;
 using ElecShop.WebApi.Core.Services.Contracts;
-using ElecShop.WebApi.Core.Utilities.Convertors;
 using ElecShop.WebApi.DataLayer.Entities.Access;
 using ElecShop.WebApi.DataLayer.Entities.Account;
 using ElecShop.WebApi.DataLayer.Repository;
@@ -18,19 +17,19 @@ namespace ElecShop.WebApi.Core.Services.Implementation
         private IGenericRepository<UserRole> userRoleRepository;
         private IPasswordHelper passwordHelper;
         private IMailSender mailSender;
-        private IViewRenderService renderView;
+        //private IViewRenderService renderView;
 
         public UserService(IGenericRepository<User> userRepository,
                            IGenericRepository<UserRole> userRoleRepository,
                            IPasswordHelper passwordHelper,
-                           IMailSender mailSender,
-                           IViewRenderService renderView)
+                           IMailSender mailSender
+                           /*IViewRenderService renderView*/)
         {
             this.userRepository = userRepository;
             this.userRoleRepository = userRoleRepository;
             this.passwordHelper = passwordHelper;
             this.mailSender = mailSender;
-            this.renderView = renderView;
+            //this.renderView = renderView;
         }
 
 
@@ -64,7 +63,7 @@ namespace ElecShop.WebApi.Core.Services.Implementation
 
             await userRepository.AddEntity(user);
             await userRepository.SaveChanges();
-            var body = await renderView.RenderToStringAsync("Email/ActivateAccount", user);
+            var body = string.Empty;//await renderView.RenderToStringAsync("Email/ActivateAccount", user);
 
             mailSender.Send("mona.kavari@gmail.com", "test", body);
 

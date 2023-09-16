@@ -17,11 +17,6 @@ namespace ElecShop.WebApi.Core.Utilities.Extensions.Connection
                 options.EnableSensitiveDataLogging();
             });
 
-            //service.AddDbContext<ElecShopDbContext>(options =>
-            //{
-            //    options.UseSqlServer(configuration.GetConnectionString("ShoppingConnectionString"));
-            //});
-
             return service;
         }
     }

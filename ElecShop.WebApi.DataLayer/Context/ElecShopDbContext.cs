@@ -17,26 +17,17 @@ namespace ElecShop.WebApi.DataLayer.Context
 
         #endregion
 
-
         #region Db Sets
 
         public DbSet<User> Users { get; set; }
-
         public DbSet<Role> Roles { get; set; }
-
         public DbSet<UserRole> UserRoles { get; set; }
-
         public DbSet<Slider> Sliders { get; set; }
-
         public DbSet<Product> Products { get; set; }
-
         public DbSet<ProductCategory> ProductCategories { get; set; }
-
         public DbSet<ProductGallery> ProductGalleries { get; set; }
         public DbSet<ProductComment> ProductComment { get; set; }
-
         public DbSet<ProductSelectedCategory> ProductSelectedCategories { get; set; }
-
         public DbSet<ProductVisit> ProductVisits { get; set; }
         public DbSet<Order> Order { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
