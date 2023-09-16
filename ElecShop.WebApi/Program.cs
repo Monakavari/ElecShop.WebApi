@@ -19,11 +19,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<ISliderService, SliderService>();
-builder.Services.AddScoped<IProductService, ProductService>();
-builder.Services.AddScoped<IOrderService, OrderService >();
-builder.Services.AddScoped<IMailSender, SendEmail>();
 //builder.Services.AddScoped<IViewRenderService, RenderViewToString>();
 
 #region GenericRepository
@@ -45,6 +40,9 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ISliderService, SliderService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IPasswordHelper, PasswordHelper>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IMailSender, SendEmail>();
+builder.Services.AddScoped<IAccessService, AccessService>();
 
 #endregion
 
